@@ -1,5 +1,5 @@
 classdef PCEvent < handle
-    % PCEVENT define a event for PCRunloop
+    % PCEVENT define an event for PCRunloop
     
     properties
         eventName % the event's name, also identifier (different event using different name)
