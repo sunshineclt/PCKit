@@ -14,7 +14,7 @@ else
 end
 Screen('TextFont', w, 'Calibri');
 Screen('TextSize', w, 18);
-%ListenChar(2);
-%HideCursor;
+ListenChar(2);
+HideCursor;
 
 end
