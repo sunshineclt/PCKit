@@ -13,7 +13,9 @@ classdef PCRunloop < handle
     
     properties
         startTime % the runloop's start time
-        eventArray % registered
+        eventArray % registered event and callback are saved here
+                   % every row's first column is the event
+                   % the rest column is the event's callback
         endJudger
     end
     
