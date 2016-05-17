@@ -17,13 +17,17 @@ classdef PCRunloop < handle
                    % every row's first column is the event
                    % the rest column is the event's callback
         endJudger
+        endCallback
+        forceEndFlag % set this value to true can force end the runloop
     end
     
     methods
-        function obj = PCRunloop(endJudger)
+        function obj = PCRunloop(endJudger, endCallback)
             obj.startTime = GetSecs();
             obj.eventArray = {};
             obj.endJudger = endJudger;
+            obj.endCallback = endCallback;
+            obj.forceEndFlag = false;
         end
         
         function register(obj, event, callback)
@@ -52,7 +56,7 @@ classdef PCRunloop < handle
         end
         
         function run(obj)
-            while ~obj.endJudger(obj)
+            while ~obj.endJudger(obj) & ~obj.forceEndFlag
                 eventIndex = 1;
                 while eventIndex <= size(obj.eventArray, 1)
                     event = obj.eventArray{eventIndex, 1};
@@ -69,6 +73,7 @@ classdef PCRunloop < handle
                     eventIndex = eventIndex + 1;
                 end
             end
+            obj.endCallback();
         end
     end
     
