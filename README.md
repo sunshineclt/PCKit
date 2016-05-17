@@ -1,6 +1,7 @@
 # PCKit - PikkaCho Kit
 - PikkaCho Kit is a elegant handler for Matlab &amp; PsychToolBox events
 - it also supply object-oriended programming wrap over PsychToolBox
+- As the picture indicate, the PikkaCho Kit is also a cute and lovely Kit:)
 ![PikkaCho](./PikkaCho.jpeg)
 
 ## How to use
