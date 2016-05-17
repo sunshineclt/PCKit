@@ -1,6 +1,7 @@
 # PCKit - PikkaCho Kit
 - PikkaCho Kit is a elegant handler for Matlab &amp; PsychToolBox events
 - it also supply object-oriended programming wrap over PsychToolBox
+![PikkaCho](./PikkaCho.jpeg)
 
 ## How to use
 - before initialize the PCRunloop instance, it is **recommended** to use `Screen('OpenWindow', 0, [0 0 0])` to open a window with PsychToolBox(because PTB may draw the big big yellow triangle to warn you about some sync problems, and that will disturb the time record of PCKit), but you can **also** explicitly set the PCRunloop.startTime before call the PCRunloop.run method.
