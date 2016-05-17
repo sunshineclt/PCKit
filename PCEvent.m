@@ -9,6 +9,9 @@ classdef PCEvent < handle
     
     methods
         function obj = PCEvent(eventName, fireJudger, repeat)
+            if nargin == 2
+                repeat = false;
+            end
             obj.eventName = eventName;
             obj.fireJudger = fireJudger;
             obj.repeat = repeat;
