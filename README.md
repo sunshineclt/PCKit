@@ -25,7 +25,7 @@ fixationPoint = PCFixationPoint(w,...
                 PCdeg2pix(0.5, SCREEN_SIZE_INCH, VIEW_DISTANCE), ...
                 PCFixationPointType.oval);
 ```
-- then call its draw() method, like `fixationPoint.draw();`, it will draw itself at the buffer, which means you need to Screen('Flip', w) after you draw every object you need
+- then call its draw() method, like `fixationPoint.draw();`, it will draw itself at the buffer, which means you need to `Screen('Flip', w)` after you draw every object you need
 
 ## Happy Using PikkaCho Kit~ Feel free to issue and pr to this repo!
 
