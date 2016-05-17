@@ -12,6 +12,21 @@
 - **Notice**: you can register many callback on the same event by calling `runloop.register()` many times. And PCKit will call the callback one by one when fireJudger returns true, in the order they are registered. Again, **Don't** let two event have the same eventName!
 - you can also check out the [example](./Example/) in the repo to understand how to use PCKit~
 
+## Object-oriented programming graphic
+### Now support:
+- FixationPoint(cross, oval)
+- Oval
+
+### Usage:
+- initialize an object by calling its constructor, like 
+```matlab
+fixationPoint = PCFixationPoint(w,...
+                PCdeg2pix(0.5, SCREEN_SIZE_INCH, VIEW_DISTANCE), ...
+                PCdeg2pix(0.5, SCREEN_SIZE_INCH, VIEW_DISTANCE), ...
+                PCFixationPointType.oval);
+```
+- then call its draw() method, like `fixationPoint.draw();`, it will draw itself at the buffer, which means you need to Screen('Flip', w) after you draw every object you need
+
 ## Happy Using PikkaCho Kit~ Feel free to issue and pr to this repo!
 
 
