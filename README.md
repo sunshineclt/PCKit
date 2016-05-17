@@ -8,5 +8,6 @@
 - initialize a event using `event = PCEvent(eventName,@()fireJudger,repeated);` `eventName` is used to identify the event, so ***don't*** let different event to have the same eventName. `fireJudger` is a function that return a boolean to indicate whether the event is fired. And `repeated` indicate whether the event will be destroyed after fist fire.
 - then add the event to runloop using `runloop.register(event, @()callback);` the `callback` is a function that will be called when the event's fireJudger return true.
 - **Notice**: you can register many callback on the same event by calling `runloop.register()` many times. And PCKit will call the callback one by one when fireJudger returns true, in the order they are registered. Again, **Don't** let two event have the same eventName!
+- you can also check out the [example](./Example/) in the repo to understand how to use PCKit~
 
 ## Happy Using PikkaCho Kit~ Feel free to issue and pr to this repo!
