@@ -1,5 +1,5 @@
 function main()
-    [w, wrect] = setUp(false);
+    [w, wrect] = setUp(true);
     global SCREEN_SIZE_INCH VIEW_DISTANCE
     
     fixationPoint = PCFixationPoint(w, PCdeg2pix(0.5, SCREEN_SIZE_INCH, VIEW_DISTANCE),...
