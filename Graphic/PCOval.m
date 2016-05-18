@@ -30,13 +30,9 @@ classdef PCOval < handle
         end
        
         function isContain = contains(obj, point)
-            if sqrt(power(obj.center.x - point.x, 2) + ...
+            isContain = sqrt(power(obj.center.x - point.x, 2) + ...
                     power(obj.center.y - point.y, 2))...
-                    < obj.size.width / 2
-                isContain = true;
-            else
-                isContain = false;
-            end
+                    < obj.size.width / 2;
         end
         
     end
