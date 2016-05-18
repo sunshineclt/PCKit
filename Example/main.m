@@ -7,6 +7,8 @@ function main()
     fixationPoint.center = PCPoint(wrect(3) / 2, wrect(4) / 2);    
     oval = PCOval(w, PCdeg2pix(2, SCREEN_SIZE_INCH, VIEW_DISTANCE));
     oval.center = PCPoint(0, 0);
+    rectangle = PCRectangle(w, PCdeg2pix(2, SCREEN_SIZE_INCH, VIEW_DISTANCE));
+    rectangle.center = PCPoint(200, 200);
     
     % initialize PCRunloop
     runloop = PCRunloop(@(obj)GetSecs()-obj.startTime>5, @()closeDown);
@@ -19,6 +21,8 @@ function main()
         DrawFormattedText(w, sprintf('z has been pressed %d times', zPressCount), 'center', 'center', [255 255 255]);
         oval.draw();
         fixationPoint.draw();
+        rectangle.center.move(50, 0);
+        rectangle.draw();
         Screen('Flip', w);
     end
     runloop.register(zPressed, @()zPressedCallback);
@@ -35,6 +39,7 @@ function main()
     function draw()
         fixationPoint.draw();
         oval.draw();
+        rectangle.draw();
         Screen('Flip', w);
     end
     runloop.register(second2Reached, @()moveAndDraw);
