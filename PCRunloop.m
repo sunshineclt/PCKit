@@ -55,8 +55,19 @@ classdef PCRunloop < handle
             end
         end
         
+        function isDeregistered = deregister(obj, eventName)
+            isDeregistered = false;
+            for eventIndex = 1:size(obj.eventArray, 1)
+                if strcmp(obj.eventArray{eventIndex, 1}.eventName, eventName) == 1
+                    obj.eventArray(eventIndex, :) = [];
+                    isDeregistered = true;
+                    break;
+                end
+            end
+        end
+        
         function run(obj)
-            while ~obj.endJudger(obj) & ~obj.forceEndFlag
+            while ~obj.endJudger(obj) && ~obj.forceEndFlag
                 eventIndex = 1;
                 while eventIndex <= size(obj.eventArray, 1)
                     event = obj.eventArray{eventIndex, 1};
@@ -66,7 +77,7 @@ classdef PCRunloop < handle
                             obj.eventArray{eventIndex, callbackIndex}();
                             callbackIndex = callbackIndex + 1;
                         end
-                        if ~obj.eventArray{eventIndex, 1}.repeat
+                        if eventIndex <= size(obj.eventArray, 1) && ~obj.eventArray{eventIndex, 1}.repeat
                             obj.eventArray(eventIndex, :) = [];
                         end
                     end
