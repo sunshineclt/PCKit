@@ -2,9 +2,9 @@ classdef PCOval < handle
     % PCOVAL is a class taking control of an oval object
     
     properties
-        size   % the size of the cross fixation point
-        center % the center point of the cross fixation point
-        color  % the color of the cross fixation point(e.g. [255 255 255])
+        size   % the size of the oval
+        center % the center point of the oval
+        color  % the color of the oval(e.g. [255 255 255])
         w      % the screen pointer to be drawn
     end
     

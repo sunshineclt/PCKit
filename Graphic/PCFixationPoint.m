@@ -2,10 +2,10 @@ classdef PCFixationPoint < handle
     % PCFIXATIONPOINT is a class taking control of fixation point
     
     properties
-        size   % the size of the cross fixation point
-        center % the center point of the cross fixation point
-        color  % the color of the cross fixation point(e.g. [255 255 255])
-        penWidth % the cross fixation point's width
+        size   % the size of the fixation point
+        center % the center point of the fixation point
+        color  % the color of the fixation point(e.g. [255 255 255])
+        penWidth % the fixation point's width
         w      % the screen pointer to be drawn
         type   % the type of fixation point
     end
