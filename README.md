@@ -16,6 +16,7 @@
 ### Now support:
 - FixationPoint(cross, oval)
 - Oval
+- Rectangle
 
 ### Usage:
 - initialize an object by calling its constructor, like 
